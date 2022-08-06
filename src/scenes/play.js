@@ -1,9 +1,7 @@
 import { DWARF, STAR, MOON } from "../enums/collectibleTypes.js";
-import { PLAY, RETRY, UI } from "../enums/sceneKeys.js";
+import { PLAY, RETRY, UI_SCENE } from "../enums/sceneKeys.js";
 import { sharedInstance as events } from '../js/EventCenter.js'
 import { getRandomEnemy } from "../js/utils.js";
-
-
 
 export class Play extends Phaser.Scene {
   score = 0;
@@ -21,7 +19,7 @@ export class Play extends Phaser.Scene {
   }
 
   create() {
-    this.scene.launch(UI, {score: this.score, health: this.health});
+    this.scene.launch(UI_SCENE, {score: this.score, health: this.health});
     const map = this.make.tilemap({ key: "map" });
 
     const tilesetBelow = map.addTilesetImage("sky_atlas", "tilesBelow");

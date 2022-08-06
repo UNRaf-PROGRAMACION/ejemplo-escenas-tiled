@@ -7,7 +7,6 @@ export class UI extends Phaser.Scene {
     }
 
     create({score = 0, health = 100}){
-
         this.score = score;
         this.scoreLabel = this.add.text(300, 6, 'Score: 0', {
 			fontSize: "32px",
@@ -41,13 +40,11 @@ export class UI extends Phaser.Scene {
 	}
 
     handleScore(score){
-        console.log('add', score)
 		this.score += score;
 		this.scoreLabel.text = `Score: ${this.score}`
 	}
 
-    handleHealthChanged(value)
-	{
+    handleHealthChanged(value){
 		this.tweens.addCounter({
 			from: this.health,
 			to: value,

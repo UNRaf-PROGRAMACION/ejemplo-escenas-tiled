@@ -1,4 +1,4 @@
-import { MAIN_MENU, PRELOADS } from "../enums/sceneKeys";
+import { MAIN_MENU, PRELOADS } from "../enums/sceneKeys.js";
 
 export class Preloads extends Phaser.Scene {
   constructor() {
