@@ -1,8 +1,9 @@
+import { MAIN_MENU, PLAY } from "../enums/sceneKeys.js";
 import Button from "../js/button.js";
 
 export class MainMenu extends Phaser.Scene {
     constructor() {
-        super("MainMenu")
+        super(MAIN_MENU)
     }
 
     create() {
@@ -15,7 +16,7 @@ export class MainMenu extends Phaser.Scene {
             'Play',
             this,
             () => {
-                this.scene.start("Play");
+                this.scene.start(PLAY);
             },
         );
     }

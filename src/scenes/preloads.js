@@ -1,6 +1,8 @@
+import { MAIN_MENU, PRELOADS } from "../enums/sceneKeys";
+
 export class Preloads extends Phaser.Scene {
   constructor() {
-    super("Preloads");
+    super(PRELOADS);
   }
 
   preload() {
@@ -46,6 +48,6 @@ export class Preloads extends Phaser.Scene {
       repeat: -1,
     });
 
-    this.scene.start("MainMenu");
+    this.scene.start(MAIN_MENU);
   }
 }

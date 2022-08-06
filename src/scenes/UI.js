@@ -1,8 +1,9 @@
+import { UI_SCENE } from '../enums/sceneKeys.js';
 import { sharedInstance as events } from '../js/EventCenter.js'
 
 export class UI extends Phaser.Scene {
     constructor(){
-        super({key: 'ui'});
+        super({key: UI_SCENE});
     }
 
     create({score = 0, health = 100}){

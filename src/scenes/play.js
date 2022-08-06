@@ -1,4 +1,5 @@
 import { DWARF, STAR, MOON } from "../enums/collectibleTypes.js";
+import { PLAY, RETRY, UI } from "../enums/sceneKeys.js";
 import { sharedInstance as events } from '../js/EventCenter.js'
 import { getRandomEnemy } from "../js/utils.js";
 
@@ -10,7 +11,7 @@ export class Play extends Phaser.Scene {
   gameOver = false;
 
   constructor() {
-    super("Play");
+    super(PLAY);
   }
 
   preload() {
@@ -20,7 +21,7 @@ export class Play extends Phaser.Scene {
   }
 
   create() {
-    this.scene.launch('ui', {score: this.score, health: this.health});
+    this.scene.launch(UI, {score: this.score, health: this.health});
     const map = this.make.tilemap({ key: "map" });
 
     const tilesetBelow = map.addTilesetImage("sky_atlas", "tilesBelow");
@@ -162,7 +163,7 @@ export class Play extends Phaser.Scene {
 
     setTimeout(() => {
       this.scene.start(
-        "Retry",
+        RETRY,
         {
           score: this.score,
         },

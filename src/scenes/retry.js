@@ -1,8 +1,9 @@
+import { PLAY, RETRY } from "../enums/sceneKeys.js";
 import Button from "../js/button.js";
 
 export class Retry extends Phaser.Scene {
   constructor() {
-    super("Retry");
+    super(RETRY);
   }
 
   init(data) {
@@ -38,7 +39,7 @@ export class Retry extends Phaser.Scene {
       "Retry",
       this,
       () => {
-        this.scene.start("Play");
+        this.scene.start(PLAY);
       }
     );
   }
