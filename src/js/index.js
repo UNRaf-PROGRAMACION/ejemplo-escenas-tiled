@@ -2,8 +2,9 @@ import { Preloads } from "../scenes/preloads.js";
 import { MainMenu } from "../scenes/mainmenu.js";
 import { Play } from "../scenes/play.js";
 import { Retry } from "../scenes/retry.js";
+import { UI } from "../scenes/UI.js";
 
-var config = {
+const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
@@ -26,8 +27,7 @@ var config = {
       debug: false,
     },
   },
-  scene: [Preloads, MainMenu, Play, Retry], // Listado de todas las escenas del juego, en orden
-  // La primera escena es con la cual empieza el juego
+  scene: [Preloads, MainMenu, Play, Retry, UI],
 };
 
-var game = new Phaser.Game(config);
+const game = new Phaser.Game(config);

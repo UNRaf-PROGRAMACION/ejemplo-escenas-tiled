@@ -1,4 +1,3 @@
-// Clase Boton, para no repetir tanto codigo
 class Button {
     constructor(x, y, label, scene, callback) {
         const button = scene.add.text(x, y, label)

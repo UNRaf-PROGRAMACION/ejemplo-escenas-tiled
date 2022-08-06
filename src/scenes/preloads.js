@@ -1,8 +1,5 @@
-// Clase Preloads, para separar los preloads y tener mejor orden
 export class Preloads extends Phaser.Scene {
-  // Se extiende de Phaser.Scene porque es una escena
   constructor() {
-    // Se asigna una key para despues poder llamar a la escena
     super("Preloads");
   }
 
@@ -16,7 +13,12 @@ export class Preloads extends Phaser.Scene {
     this.load.image("sky", "public/assets/images/sky.png");
     this.load.image("ground", "public/assets/images/platform.png");
     this.load.image("star", "public/assets/images/star.png");
+    this.load.image("moon", "public/assets/images/moon.png");
+    this.load.image("dwarf", "public/assets/images/dwarf.png");
     this.load.image("bomb", "public/assets/images/bomb.png");
+    this.load.image("atomic", "public/assets/images/atomic.png");
+    this.load.image("c4", "public/assets/images/c4.png");
+    this.load.image("smoke", "public/assets/images/smoke.png");
     this.load.spritesheet("dude", "public/assets/images/dude.png", {
       frameWidth: 32,
       frameHeight: 48,
@@ -24,7 +26,6 @@ export class Preloads extends Phaser.Scene {
   }
 
   create() {
-    //  Our player animations, turning, walking left and walking right.
     this.anims.create({
       key: "left",
       frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
@@ -45,7 +46,6 @@ export class Preloads extends Phaser.Scene {
       repeat: -1,
     });
 
-    // Pasa directamente a la escena del menú principal
     this.scene.start("MainMenu");
   }
 }
